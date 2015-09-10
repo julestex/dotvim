@@ -67,6 +67,12 @@ map <C-n> :NERDTreeToggle<CR>
 map <S-Left> :bp<CR>
 map <S-Right> :bn<CR>
 
+" move current line/block up and down
+nmap <C-Up> :m .-2<CR>==
+nmap <C-Down> :m .+1<CR>==
+vmap <C-Up> :m '<-2<CR>gv=gv
+vmap <C-Down> :m '>+1<CR>gv=gv
+
 " Git commit messages word-wrap
 autocmd Filetype gitcommit setlocal textwidth=72
 
