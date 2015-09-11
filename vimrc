@@ -1,26 +1,9 @@
-" Vundle requirements {
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-
-" My plugins
-Plugin 'scrooloose/nerdtree.git' " show nav tree
-Plugin 'kien/ctrlp.vim' " fast file search
-Plugin 'FelikZ/ctrlp-py-matcher' " super-fast matcher for ctrlp
-Plugin 'evidens/vim-twig' " syntax colorization for Twig templates
-Plugin 'bling/vim-airline' " airline status bar
-Plugin 'altercation/vim-colors-solarized' "solarized color scheme
-Plugin 'airblade/vim-gitgutter' " show git diff in the gutter
-Plugin 'tpope/vim-fugitive' " git wrapper
-Plugin 'Townk/vim-autoclose' " autoclose brackets, parenthesis…
-
-call vundle#end()
-filetype plugin indent on
-" }
+" Vundle bundles
+if filereadable(expand("~/.vimrc.bundles"))
+     source ~/.vimrc.bundles
+endif
 
 syntax on
 
@@ -76,5 +59,20 @@ vmap <C-Down> :m '>+1<CR>gv=gv
 " Git commit messages word-wrap
 autocmd Filetype gitcommit setlocal textwidth=72
 
-" Mouse handling
+" Misc
+set cursorline " Highlight current line
 set mouse=a "enable mouse in all mode
+set expandtab "Expand tabs to spaces
+
+" Automatially insert use statement for class under the cursor.
+noremap <Leader>u :call PhpInsertUse()<CR>
+nnoremap <Leader>so magg/use<CR>vip:sort<CR>`a:delmarks a<CR>`
+
+" Remove trailing whitespace with <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Create a getter for the word under the cursor
+map <leader>g mayiwGO<CR>public function get<ESC>pblll~A()<CR>{<CR>return $this-><ESC>pA;<CR>}<ESC>gg=G`a:delm a<CR>
+
+" Stop that stupid window from popping up
+map q: :q

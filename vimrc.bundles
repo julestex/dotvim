@@ -1,0 +1,26 @@
+set nocompatible
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+Plugin 'scrooloose/nerdtree.git' " show nav tree
+Plugin 'kien/ctrlp.vim' " fast file search
+Plugin 'FelikZ/ctrlp-py-matcher' " super-fast matcher for ctrlp
+Plugin 'evidens/vim-twig' " syntax colorization for Twig templates
+Plugin 'bling/vim-airline' " airline status bar
+Plugin 'altercation/vim-colors-solarized' "solarized color scheme
+Plugin 'airblade/vim-gitgutter' " show git diff in the gutter
+Plugin 'tpope/vim-fugitive' " git wrapper
+Plugin 'Townk/vim-autoclose' " autoclose brackets, parenthesis…
+Plugin 'SirVer/ultisnips' " Enable snippet creation
+Plugin 'arnaud-lb/vim-php-namespace' " add namespace
+Plugin 'bkad/CamelCaseMotion' " w, b, e move camelcase wise
+Plugin 'henrik/vim-indexed-search' " search is more verbose
+Plugin 'honza/vim-snippets' " add presets snippets
+Plugin 'scrooloose/syntastic' " add code syntax checks
+Plugin 'joshtronic/php.vim' " Handle php syntax
+
+call vundle#end()
+filetype plugin indent on
