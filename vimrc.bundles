@@ -21,6 +21,7 @@ Plugin 'henrik/vim-indexed-search' " search is more verbose
 Plugin 'honza/vim-snippets' " add presets snippets
 Plugin 'scrooloose/syntastic' " add code syntax checks
 Plugin 'joshtronic/php.vim' " Handle php syntax
+Plugin 'aklt/plantuml-syntax' "Enable tools for plantuml
 
 call vundle#end()
 filetype plugin indent on
